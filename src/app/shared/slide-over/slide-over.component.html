@@ -1,0 +1,52 @@
+<div *ngIf="open" class="fades position-fixed top-0 start-0 min-vh-100 w-100 z-bg bg-dark">
+
+</div>
+
+<div class="container position-fixed top-0 start-0 min-vh-100 w-50 z-front bg-light bg-gradient"
+	*ngIf="open"
+>
+  <div class="closeButtom position-absolute" (click)="close()">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-times-square fa-w-14 fa-7x"><path fill="currentColor" d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-54.4 289.1c4.7 4.7 4.7 12.3 0 17L306 377.6c-4.7 4.7-12.3 4.7-17 0L224 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L102.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L280 256l65.6 65.1z" class=""></path></svg>
+  </div>
+<div class="main mt-5"  >
+		<div
+		*ngIf="total != -1 && total == 0"
+		 >
+			<h4>
+				No existen entradas
+			</h4>
+		</div>
+		<div
+		*ngIf=" total > 0"
+		>
+		</div>
+		<div class="d-flex mt-1 mb-1"
+			*ngFor="let comment of currentPostData"
+		>
+			<div class="flex-shrink-0">
+				<a 
+					[routerLink]="['/profile', comment.owner.id]"
+					>
+					<img [src]="comment.owner.picture" alt="...">
+				</a>
+			</div>
+			<div class="flex-grow-1 ms-3">
+				{{comment.message}}
+			</div>
+		</div>
+	
+</div>
+<footer>
+
+	<form class="d-flex w-100">
+		<div class="form-floating w-75">
+			<textarea name="comment" class="form-control" placeholder="" [(ngModel)]="currentComment"></textarea>
+			<label for="floatingTextarea">Nuevo comentario</label>
+		</div>
+		<div class="d-flex justify-content-center justify-items-center w-25">
+			<button class="btn btn-primary w-50 comment-boton " (click)="makeComment()" type="button">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class=""><path fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z" class=""></path></svg>
+			</button>
+		</div>
+	</form>
+</footer>

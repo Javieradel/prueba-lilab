@@ -1,0 +1,55 @@
+<app-header></app-header>
+<header>
+
+    <div class="container">
+  
+      <div class="profile">
+  
+        <div class="profile-image">
+  
+          <img [src]="user.picture" alt="">
+  
+        </div>
+  
+        <div class="profile-user-settings">
+  
+          <h1 class="profile-user-name">{{user.firstName}} {{user.lastName}}</h1>
+          <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+  
+        </div>
+  
+        <div class="profile-stats">
+          <span class="muted">
+            {{user.email}}
+          </span>
+            <span class="d-block profile-stat-count">{{numberOfPost}} posts</span> 
+        </div>
+      </div>
+      <!-- End of profile section -->
+  
+    </div>
+    <!-- End of container -->
+  
+  </header>
+  
+  <main>
+  
+    <div class="container">
+  
+      <div class="gallery">
+  
+        <app-post 
+        [data]="post"
+        (commentPost)="comment($event)"
+        *ngFor="let post of posts"
+        ></app-post>
+  
+      </div>
+      <!-- End of gallery -->
+  
+      <div class="loader"></div>
+  
+    </div>
+    <!-- End of container -->
+    <app-slide-over-comment [open]="open" (closeModal)="close()" [data]="currentOpenedBoxData"></app-slide-over-comment>
+  </main>

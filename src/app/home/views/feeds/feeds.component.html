@@ -1,0 +1,27 @@
+
+<body>
+  <app-header></app-header>
+	<!--navbar-->
+	
+	<main>
+		<section>
+			<div class="container">
+				<div class="row">
+						<app-post *ngFor="let post of posts" 
+              [data]="post"
+							(commentPost)="comment($event)"
+            ></app-post>
+						<!--end of post-->
+ 
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<footer>
+		<div class="container bg-warning text-white p-2 mt-5">
+			<p>&copy; 2020 Social</p>
+		</div>
+	</footer>
+	<app-slide-over-comment [open]="open" (closeModal)="close()" [data]="currentOpenedBoxData"></app-slide-over-comment>
+</body>

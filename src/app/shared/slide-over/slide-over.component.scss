@@ -1,0 +1,126 @@
+.closeButtom{
+  width: 35px;
+  margin: 0 0 0 auto;
+}
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+
+html {
+  background: linear-gradient(135deg, #26a3ff, #53c9b3) no-repeat fixed; 
+}
+
+body {
+  font-family: 'Lato', "Helvetica", Arial, sans-serif;
+}
+
+// the good stuff
+
+.post {
+  max-width: 400px;
+  background: #fff;
+  margin: 50px auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 2px 20px 0 rgba(0,0,0, 0.4);
+  overflow: hidden;
+  
+  h1 {
+    margin: 0 0 5px;
+  }
+  
+  hr {
+    width: 50px;
+    margin: 15px auto;
+    border: 1px solid #eee;
+  }
+
+  p {
+    margin: 0;
+  }
+  .btn-circle {
+    color: #000;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    padding: 15px;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 100%;
+    transition: all .2s ease;  }
+  
+  &:hover .btn-circle {
+    color: #fff;
+    background: #000;
+    transform: scale(1.2);
+
+  }
+
+  .post-left {
+    img {
+      max-width: 100%;
+      display: block;  
+      object-fit: cover;
+
+    }
+  }
+
+  .post-right {
+    text-align: center;
+    padding: 60px 40px;
+    border-left: 1px solid #f9f9f9;
+  }
+}
+
+
+
+@media (min-width:768px) {
+  .post {
+    max-width: 800px;
+
+    .post-child {
+      display: table-cell;   
+      vertical-align: middle;
+      width: 50%;
+    }  
+
+    .post-right {
+      padding: 40px;
+    }
+  }
+}
+.botom{
+  width: 45px !important;
+  height: 45px !important;
+  .icon{
+    fill: black;
+    width: 25px;
+    display: block;
+  }
+  .chat {
+    margin-left: -5px;
+  }
+  .icon-like{
+    margin-left: -4px;
+    margin-top: -9px;
+    fill: #26a3ff;
+  }
+  &.bg-primary {
+    .icon-like{
+      fill: white;
+    }
+  }
+}
+.z-bg{
+  z-index: 1;
+}
+
+.z-front{
+  z-index: 5;
+}
+.comment-boton{
+  width: 50%;
+  margin: 0 auto;
+  svg{
+    max-width: 45px;
+  }
+}

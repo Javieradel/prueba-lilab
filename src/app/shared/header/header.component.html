@@ -1,0 +1,18 @@
+<header class="pl-4 pr-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <a class="navbar-brand">Social</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/" routerLinkActive="text-dark">Home</a>
+        </li>
+        <li class="nav-item active">
+        <div class="avatar"><img [src]="user.picture" alt=""></div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/profile',idUser]">Profile</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
